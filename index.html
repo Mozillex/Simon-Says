@@ -5,41 +5,59 @@
     <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/segment14" type="text/css"/>
   </head>
   <body>
     <div class="circle outer black">
 
-      <div class="circle inner1">
-        <div class="pad red" id='red'></div>
-        <div class="pad blue" id='blue'></div>
-        <div class="pad yellow" id='yellow'></div>
-        <div class="pad green" id='green'></div>
+    	<div class="circle inner1">
+    		<div class="pad red" id='red'></div>
+    		<div class="pad blue" id='blue'></div>
+    		<div class="pad yellow" id='yellow'></div>
+    		<div class="pad green" id='green'></div>
 
-        <div class="circle inner2 black">
+    		<div class="circle inner2 black">
 
-          <div class="circle center silver">
-          <div class='name'>simon<span>beeps!</span></div>
+    			<div class="circle center silver">
+    				<div class='brand'>simon<span>beeps!</span></div>
 
-            <div class="slide blue game"></div>
-            <div class="slide blue skill"></div>
+    				<!-- <div class="slide blue game"></div> -->
+    				<!-- <div class="slide blue skill"></div> -->
 
-            <div class = 'buttons'>
-              <div class="circle button yellow"></div>
-              <div class="circle button red" id='start'></div>
-              <div class="circle button yellow"></div>
-            </div>
+    				<div class='button-row'>
 
-            <div class="slide red power"></div>
+    					<div class="button">
+    						<div class="circle button yellow" id='strictMode'></div>
+    						<div class='label'>STRICT</div>
+    						<div class='circle button indicator' id='indicator'></div>
+    					</div>
 
-          </div>
+    					<div class='button'>
+    						<div class="circle button red" id='start' name='start'></div>
+    						<div class='label'>START</div>
+    					</div>
 
+    					<div class="button">
+    						<div class="circle button yellow" id='reset'></div>
+    						<div class='label'>RESET</div>
+    					</div>
 
+    				</div>
 
-        </div>
-      </div>
+    				<!-- <div class="slide red power"></div> -->
+    				<div id="counter"></div>
+
+    			</div>
+
+    		</div>
+    	</div>
     </div>
 
-
+    <audio src="https://s3.amazonaws.com/freecodecamp/simonSound1.mp3" id = 'green-audio'></audio>
+    <audio src="https://s3.amazonaws.com/freecodecamp/simonSound2.mp3" id = 'red-audio'></audio>
+    <audio src="https://s3.amazonaws.com/freecodecamp/simonSound3.mp3" id = 'blue-audio'></audio>
+    <audio src="https://s3.amazonaws.com/freecodecamp/simonSound4.mp3" id = 'yellow-audio'></audio>
+    <audio src="https://s3.us-east-2.amazonaws.com/pub-img-ltd/buzzer.wav" id = 'buzzer'></audio>
     <script type="text/javascript" src="script.js"></script>
   </body>
 </html>
