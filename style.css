@@ -92,9 +92,6 @@ header {
 	justify-content: center;
 }
 
-/* .pad:focus,
-.pad:active  */
-
 .lit {
 	filter: brightness(1.5);
 }

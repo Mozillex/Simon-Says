@@ -1,9 +1,4 @@
 const pads = document.querySelectorAll('.pad');
-
-const redPad = document.getElementById('red');
-const bluePad = document.getElementById('blue');
-const yellowPad = document.getElementById('yellow');
-const greenPad = document.getElementById('green');
 const showLevel = n => (document.getElementById('counter').textContent = n);
 let level;
 let playerIndex;
@@ -43,7 +38,8 @@ function newGame() {
 	playerTurn = false;
 	sequence = [];
 	showLevel(level);
-	simonSays(sequence);
+	let go = () => simonSays(sequence);
+	setTimeout(go, 1000);
 }
 
 pads.forEach(p =>
@@ -59,11 +55,14 @@ pads.forEach(p =>
 		}
 		if (p.id === sequence[playerIndex]) {
 			padEvent(p.id);
+			let dim = () => document.getElementById(p.id).classList.remove('lit');
+			setTimeout(dim, 200);
 			playerIndex++;
 			if (playerIndex === sequence.length) {
 				playerIndex = 0;
 				showLevel(level);
-				setTimeout(simonSays(sequence), 500);
+				let go = () => simonSays(sequence);
+				setTimeout(go, 1000);
 			}
 		}
 	})
@@ -94,11 +93,11 @@ function simonSays(padArr) {
 	let int = setInterval(speak, 500);
 
 	function speak() {
-		// for(index;index <padArr.length;index++)
 		pads.forEach(ea => ea.classList.remove('lit'));
 		let i = index;
 		let id = sequence[i];
 		if (index === sequence.length) playerTurn = true;
+
 		if (index >= sequence.length) {
 			clearInterval(int);
 		} else {
